@@ -37,7 +37,7 @@ QMK is developed and maintained by Jack Humbert of OLKB with contributions from 
 
 # FOR HHKB_BLE
 
-以下是关于 YDKB 固件的说明，修改的位置在 `ydkb/hhkb_ble`，为了限制空间大小，关闭了一些不用的功能，比如奇怪的 combo，mouse 支持等。因为调整了很多组合键，由于原有的GUI 配置工具无法很好支持部分组合键，尤其是 windows 下的 Win 组合键（因为 windows 上这个 GUI 修饰键会有实际作用，不像 mac 上那样），修改了 keymap.c 用于屏蔽不让修饰键在按下的时候就发送给操作系统，从而完美实现各种组合键。
+以下是关于 YDKB 固件的说明，修改的位置在 [ydkb/hhkb_ble](https://github.com/kimiazhu/vial-hhkb-ble/tree/ava/keyboards/ydkb/hhkb_ble/)，为了限制空间大小，关闭了一些不用的功能，比如奇怪的 combo，mouse 支持等。因为调整了很多组合键，由于原有的GUI 配置工具无法很好支持部分组合键，尤其是 windows 下的 Win 组合键（因为 windows 上这个 GUI 修饰键会有实际作用，不像 mac 上那样），修改了 keymap.c 用于屏蔽不让修饰键在按下的时候就发送给操作系统，从而完美实现各种组合键。
 
 ## 编译用的镜像
 
