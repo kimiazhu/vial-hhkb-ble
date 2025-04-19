@@ -51,7 +51,7 @@ QMK is developed and maintained by Jack Humbert of OLKB with contributions from 
 
 ## 构建固件
 
-通过 ssh 进入容器：`ssh -p 8890 root@localhost`，进入 `/root/Development` 目录，然后 clone 本工程，在工程根目录下执行：
+通过 ssh 进入容器：`ssh -p 8890 root@localhost`，进入 `/root/Development` 目录，然后 `git clone --recursive git@github.com:kimiazhu/vial-hhkb-ble.git` 本工程，在工程根目录下执行：
 
 `make ydkb/hhkb_ble:vial`
 
