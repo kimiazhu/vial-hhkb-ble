@@ -64,7 +64,7 @@ QMK is developed and maintained by Jack Humbert of OLKB with contributions from 
 - macOS 下按住 ESC 插入数据线，然后：
   - 通过`diskutil list` 确认键盘是在哪个分区
   - 使用 `diskutil umount /Volumes/HHKB_BLE` 先卸载键盘，
-  - 使用 `sudo dd if=/path/to/vial-qmk-v5/ydkb_hhkb_ble_vial.bin of=/dev/diskX seek=4` 刷写固件
+  - 使用 `sudo dd if=/path/to/vial-hhkb-ble/ydkb_hhkb_ble_vial.bin of=/dev/diskX seek=4` 刷写固件
 
 ## 快捷键列表
 键盘设置了四层，层号0~3，0 层为默认层，一层为多功能层，通过 FN 按下时激活，内容根 HHKB 默认一样没有变。2 层为 Windows 层，3 层为 Mac 层。其中 1-2-3 层也可以通过 `右Alt`+1/2/3 数字键长期激活，短按 `右Alt` 也会回到 0 层。
