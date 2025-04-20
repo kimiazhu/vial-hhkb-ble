@@ -39,6 +39,8 @@ QMK is developed and maintained by Jack Humbert of OLKB with contributions from 
 
 以下是关于 YDKB 固件的说明，修改的位置在 [ydkb/hhkb_ble](https://github.com/kimiazhu/vial-hhkb-ble/tree/ava/keyboards/ydkb/hhkb_ble/)，为了限制空间大小，关闭了一些不用的功能，比如奇怪的 combo，mouse 支持等。因为调整了很多组合键，由于原有的GUI 配置工具无法很好支持部分组合键，尤其是 windows 下的 Win 组合键（因为 windows 上这个 GUI 修饰键会有实际作用，不像 mac 上那样），修改了 keymap.c 用于屏蔽不让修饰键在按下的时候就发送给操作系统，从而完美实现各种组合键。
 
+PS:  20250420 增加一条判断，如果当前键盘处于layer 0，则 lctrl 和 lshift 会在按下是发送给操作系统，因为这两个按键在 win 和 mac 下独立的按下状态都有实际意义（多选或右击）。
+
 ## 编译用的镜像
 
 `podman pull ghcr.io/kimiazhu/dev-qmk:250412`

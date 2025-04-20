@@ -37,15 +37,15 @@ bool handle_mac(uint16_t keycode, keyrecord_t *record, uint16_t curr_key, uint8_
             register_mods(to_mods); \
         } \
         register_code(to); \
-        is_active = true; \
+        is_custom_keymapping_active = true; \
     }
 #define HANDLE_UP_WIN(trigger, expected_mods, to, to_mods) \
-    else if (keycode == trigger && is_active) { \
+    else if (keycode == trigger && is_custom_keymapping_active) { \
         unregister_code(to); \
         if (to_mods) { \
             unregister_mods(MOD_MASK_CSAG); \
         } \
-        is_active = false; \
+        is_custom_keymapping_active = false; \
     }
 
 
@@ -55,15 +55,15 @@ bool handle_mac(uint16_t keycode, keyrecord_t *record, uint16_t curr_key, uint8_
             register_mods(to_mods); \
         } \
         register_code(to); \
-        is_active = true; \
+        is_custom_keymapping_active = true; \
     }
 #define HANDLE_UP_MAC(trigger, expected_mods, to, to_mods) \
-    else if (keycode == trigger && is_active) { \
+    else if (keycode == trigger && is_custom_keymapping_active) { \
         unregister_code(to); \
         if (to_mods) { \
             unregister_mods(MOD_MASK_CSAG); \
         } \
-        is_active = false; \
+        is_custom_keymapping_active = false; \
     }
 
 #define HANDLE_DOWN_BOTH(trigger, expected_mods, to, to_mods) \
@@ -72,13 +72,13 @@ bool handle_mac(uint16_t keycode, keyrecord_t *record, uint16_t curr_key, uint8_
             register_mods(to_mods); \
         } \
         register_code(to); \
-        is_active = true; \
+        is_custom_keymapping_active = true; \
     }
 #define HANDLE_UP_BOTH(trigger, expected_mods, to, to_mods) \
-    else if (keycode == trigger && is_active) { \
+    else if (keycode == trigger && is_custom_keymapping_active) { \
         unregister_code(to); \
         if (to_mods) { \
             unregister_mods(MOD_MASK_CSAG); \
         } \
-        is_active = false; \
+        is_custom_keymapping_active = false; \
     }

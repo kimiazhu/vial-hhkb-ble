@@ -30,9 +30,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] =
     },
 };
 
-static uint8_t saved_mods;
-static bool is_direction_down = false;
-static bool is_active = false; // 标记一组快捷键生效，用于按键释放的时候触发 unregister_code
+static bool is_custom_keymapping_active = false; // 标记一组用户自定义快捷键生效，用于按键释放的时候触发 unregister_code
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     static uint8_t held_mods = 0;
@@ -45,6 +43,11 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     if (keycode >= KC_LCTL && keycode <= KC_RGUI) {
         if (record->event.pressed) {
             held_mods |= MOD_BIT(keycode);
+            // 如果在第一层，此时不要屏蔽 ctrl 和 shift，因为这两个键会在按下是用于多选
+            if ((keycode == KC_LSFT || keycode == KC_LCTL) && curr_layer == 0) {
+                // 如果当前是第一层，按下 shift 键时，直接发送给系统
+                register_code(keycode);
+            }
         } else {
             held_mods &= ~MOD_BIT(keycode);
 
