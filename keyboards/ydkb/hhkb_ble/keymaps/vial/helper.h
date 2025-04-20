@@ -3,6 +3,11 @@
     #define MODS_NULL 0
 #endif
 
+#define DEFAULT_LAYER 0
+#define FUNCTION_LAYER 1
+#define WIN_LAYER 2
+#define MAC_LAYER 3
+
 // 调用这个方法之前，先用 IS_LAYER_ON(3) 判断一下当前是否在 macOS 层
 bool handle_mac(uint16_t keycode, keyrecord_t *record, uint16_t curr_key, uint8_t curr_mods, uint16_t to, uint8_t to_mods) {
     if (record->event.pressed) {
@@ -25,8 +30,15 @@ bool handle_mac(uint16_t keycode, keyrecord_t *record, uint16_t curr_key, uint8_
     return true;
 }
 
+#define RALT_RELEASED_TO_CLEAR_MOD_AND_LAYER \
+    unregister_mods(MOD_MASK_CSAG); \
+    clear_mods(); \
+    layer_clear(); \
+    curr_layer = 0; \
+    held_mods = 0;
+
 #define MOVE_to_LAYER(layer) \
-    else if (keycode == KC_##layer && held_mods == MOD_BIT(KC_RALT)) { \
+    else if ((keycode == KC_##layer || keycode == KC_F##layer) && held_mods == MOD_BIT(KC_RALT)) { \
         layer_move(layer); \
         curr_layer = layer; \
     }
@@ -63,6 +75,21 @@ bool handle_mac(uint16_t keycode, keyrecord_t *record, uint16_t curr_key, uint8_
         if (to_mods) { \
             unregister_mods(MOD_MASK_CSAG); \
         } \
+        is_custom_keymapping_active = false; \
+    }
+
+#define HANDLE_DOWN_BTH(trigger, expected_mods, to, to_mods) \
+    else if ((trigger == keycode) && (held_mods == expected_mods)) { \
+        if (to_mods) { \
+            register_mods(to_mods); \
+        } \
+        register_code(to); \
+        is_custom_keymapping_active = true; \
+    }
+#define HANDLE_UP_BTH(trigger, expected_mods, to, to_mods) \
+    else if (keycode == trigger && is_custom_keymapping_active) { \
+        unregister_code(to); \
+        unregister_mods(MOD_MASK_CSAG); \
         is_custom_keymapping_active = false; \
     }
 
