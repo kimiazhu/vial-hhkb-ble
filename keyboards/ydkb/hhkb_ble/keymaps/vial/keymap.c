@@ -44,10 +44,9 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             if (keycode >= KC_LCTL && keycode <= KC_RGUI) { // 按下修饰键，记录下即可
                 held_mods |= MOD_BIT(keycode);
                 return false;
-            } else {
-                // 按下的不是修饰键
-                if (held_mods) { // 此时有修饰键处于按下状态
-                    is_combination_active = true;
+            } else { // 当前按下的是普通按键
+                if (held_mods) { // 当前按下的是普通按键，但此时修饰键处于按下状态
+                    is_combination_active = true; // 激活组合键标记位
                     if (0) {}
                     MOVE_to_LAYER(1)
                     MOVE_to_LAYER(2)
@@ -117,7 +116,8 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
                     // 所有的 mods 组合键都释放了
                     is_combination_active = false;
                 }
-            } else {
+                return false;
+            } else { // 释放普通按键的分支逻辑
                 if (keycode == MO(1)) {unregister_code(MO(1));layer_move(curr_layer);}
                 HANDLE_UP_BTH(KC_H, MOD_BIT(KC_LCTL), KC_LEFT, MODS_NULL)
                 HANDLE_UP_BTH(KC_J, MOD_BIT(KC_LCTL), KC_DOWN, MODS_NULL)
