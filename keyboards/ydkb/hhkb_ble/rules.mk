@@ -21,11 +21,11 @@ COMMAND_ENABLE          = no # Commands for debug and configuration
 NKRO_ENABLE             = yes # Enable N-Key Rollover
 BACKLIGHT_ENABLE        = no  # Enable keyboard backlight functionality
 RGBLIGHT_ENABLE         = no
-LTO_ENABLE              = yes 
+LTO_ENABLE              = yes
 
 # project specific files
 SRC = \
     led_fn.c      \
     matrix.c   \
-    
+
 include $(TMK_DIR)/protocol/ble51.mk
