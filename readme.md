@@ -94,9 +94,10 @@ PS:  20250420 增加一条判断，如果当前键盘处于layer 0，则 lctrl �
 |BOTH        | LALT-K      | Page DOWN     |下翻页    |
 |BOTH        | LCTL-D      | Delece        |删除当前字符    |
 |macOS       | LCTL-R      | CMD-R         |浏览器刷新      | 
-|Windows     | LCTRL-A     | HOME          |行首，mac下本来就是这个  | 
 |Windows     | LWIN-A      | LCTL-A        |全选,保持跟 mac 相同     |
+|Windows     | LCTRL-A     | HOME          |行首，mac下本来就是这个  | 
 |Windows     | LCTRL-Q     | LALT-F4       |关闭当前应用程序   |
 |Windows     | LCTRL-N     | F2            |重命名当前文件 |
 |Windows     | LWIN-C      | LCTL-C        |复制       |
 |Windows     | LWIN-V      | LCTL-V        |粘贴       |
+|Windows     | LWIN-X      | LCTL-X        |剪切       |
