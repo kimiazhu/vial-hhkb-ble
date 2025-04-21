@@ -76,6 +76,9 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
                     HANDLE_DOWN_WIN(KC_A, MOD_BIT(KC_LGUI), KC_A, MOD_BIT(KC_LCTL)) // win+A -> 全选
                     HANDLE_DOWN_WIN(KC_Q, MOD_BIT(KC_LGUI), KC_F4, MOD_BIT(KC_LALT)) // win+Q -> 关闭窗口
                     HANDLE_DOWN_WIN(KC_N, MOD_BIT(KC_LCTL), KC_F2, MODS_NULL) // ctrl+n -> rename
+                    HANDLE_DOWN_WIN(KC_C, MOD_BIT(KC_LGUI), KC_C, MOD_BIT(KC_LCTL)) // win+c -> 复制
+                    HANDLE_DOWN_WIN(KC_V, MOD_BIT(KC_LGUI), KC_V, MOD_BIT(KC_LCTL)) // win+v -> 粘贴
+                    HANDLE_DOWN_WIN(KC_X, MOD_BIT(KC_LGUI), KC_X, MOD_BIT(KC_LCTL)) // win+x -> 剪切
                     else {
                         register_mods(held_mods);
                         register_code(keycode);
@@ -144,6 +147,9 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
                 HANDLE_UP_WIN(KC_A, MOD_BIT(KC_LGUI), KC_A, MOD_BIT(KC_LCTL)) // win+A -> 全选
                 HANDLE_UP_WIN(KC_Q, MOD_BIT(KC_LGUI), KC_F4, MOD_BIT(KC_LALT)) // win+Q -> 关闭窗口
                 HANDLE_UP_WIN(KC_N, MOD_BIT(KC_LCTL), KC_F2, MODS_NULL) // ctrl+n -> rename
+                HANDLE_UP_WIN(KC_C, MOD_BIT(KC_LGUI), KC_C, MOD_BIT(KC_LCTL)) // win+c -> 复制
+                HANDLE_UP_WIN(KC_V, MOD_BIT(KC_LGUI), KC_V, MOD_BIT(KC_LCTL)) // win+v -> 粘贴
+                HANDLE_UP_WIN(KC_X, MOD_BIT(KC_LGUI), KC_X, MOD_BIT(KC_LCTL)) // win+x -> 剪切
                 else {
                     unregister_code(keycode);
                     // 这里之所以清除所有，是为了确保不会因为按键释放顺序导致错误，如果是用比如:
