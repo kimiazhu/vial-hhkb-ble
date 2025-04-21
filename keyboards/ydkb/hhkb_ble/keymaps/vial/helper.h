@@ -55,7 +55,7 @@ bool handle_mac(uint16_t keycode, keyrecord_t *record, uint16_t curr_key, uint8_
     else if (keycode == trigger && is_custom_keymapping_active) { \
         unregister_code(to); \
         if (to_mods) { \
-            unregister_mods(MOD_MASK_CSAG); \
+            unregister_mods(to_mods); \
         } \
         is_custom_keymapping_active = false; \
     }
