@@ -79,6 +79,17 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
                     HANDLE_DOWN_WIN(KC_C, MOD_BIT(KC_LGUI), KC_C, MOD_BIT(KC_LCTL)) // win+c -> 复制
                     HANDLE_DOWN_WIN(KC_V, MOD_BIT(KC_LGUI), KC_V, MOD_BIT(KC_LCTL)) // win+v -> 粘贴
                     HANDLE_DOWN_WIN(KC_X, MOD_BIT(KC_LGUI), KC_X, MOD_BIT(KC_LCTL)) // win+x -> 剪切
+                    HANDLE_DOWN_WIN(KC_F, MOD_BIT(KC_LGUI), KC_F, MOD_BIT(KC_LCTL)) // win+f -> find
+                    HANDLE_DOWN_WIN(KC_S, MOD_BIT(KC_LGUI), KC_S, MOD_BIT(KC_LCTL)) // win+f -> save
+                    HANDLE_DOWN_WIN(KC_W, MOD_BIT(KC_LGUI), KC_W, MOD_BIT(KC_LCTL)) // win+w -> close tab
+                    HANDLE_DOWN_WIN(KC_Z, MOD_BIT(KC_LGUI), KC_Z, MOD_BIT(KC_LCTL)) // win+z -> undo
+                    HANDLE_DOWN_WIN(KC_Y, MOD_BIT(KC_LGUI), KC_Y, MOD_BIT(KC_LCTL)) // win+y -> redo
+                    HANDLE_DOWN_WIN(KC_L, MOD_MASK_CS, KC_END, MOD_BIT(KC_LSFT)) // select to end
+                    HANDLE_DOWN_WIN(KC_H, MOD_MASK_CS, KC_HOME, MOD_BIT(KC_LSFT)) // select to home
+                    HANDLE_DOWN_WIN(KC_J, MOD_MASK_CS, KC_DOWN, MOD_BIT(KC_LSFT)) // select to next line
+                    HANDLE_DOWN_WIN(KC_K, MOD_MASK_CS, KC_UP, MOD_BIT(KC_LSFT)) // select to before line
+                    HANDLE_DOWN_WIN(KC_B, MOD_MASK_CS, KC_LEFT, MOD_BIT(KC_LSFT)) // select to before word
+                    HANDLE_DOWN_WIN(KC_F, MOD_MASK_CS, KC_RIGHT, MOD_BIT(KC_LSFT)) // select to next word
                     else {
                         register_mods(held_mods);
                         register_code(keycode);
@@ -144,6 +155,17 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
                 HANDLE_UP_WIN(KC_C, MOD_BIT(KC_LGUI), KC_C, MOD_BIT(KC_LCTL)) // win+c -> 复制
                 HANDLE_UP_WIN(KC_V, MOD_BIT(KC_LGUI), KC_V, MOD_BIT(KC_LCTL)) // win+v -> 粘贴
                 HANDLE_UP_WIN(KC_X, MOD_BIT(KC_LGUI), KC_X, MOD_BIT(KC_LCTL)) // win+x -> 剪切
+                HANDLE_UP_WIN(KC_F, MOD_BIT(KC_LGUI), KC_F, MOD_BIT(KC_LCTL)) // win+f -> find
+                HANDLE_UP_WIN(KC_S, MOD_BIT(KC_LGUI), KC_S, MOD_BIT(KC_LCTL)) // win+f -> save
+                HANDLE_UP_WIN(KC_W, MOD_BIT(KC_LGUI), KC_W, MOD_BIT(KC_LCTL)) // win+w -> close tab
+                HANDLE_UP_WIN(KC_Z, MOD_BIT(KC_LGUI), KC_Z, MOD_BIT(KC_LCTL)) // win+z -> undo
+                HANDLE_UP_WIN(KC_Y, MOD_BIT(KC_LGUI), KC_Y, MOD_BIT(KC_LCTL)) // win+y -> redo
+                HANDLE_UP_WIN(KC_L, MOD_MASK_CS, KC_END, MOD_BIT(KC_LSFT)) // select to end
+                HANDLE_UP_WIN(KC_H, MOD_MASK_CS, KC_HOME, MOD_BIT(KC_LSFT)) // select to home
+                HANDLE_UP_WIN(KC_J, MOD_MASK_CS, KC_DOWN, MOD_BIT(KC_LSFT)) // select to next line
+                HANDLE_UP_WIN(KC_K, MOD_MASK_CS, KC_UP, MOD_BIT(KC_LSFT)) // select to before line
+                HANDLE_UP_WIN(KC_B, MOD_MASK_CS, KC_LEFT, MOD_BIT(KC_LSFT)) // select to before word
+                HANDLE_UP_WIN(KC_F, MOD_MASK_CS, KC_RIGHT, MOD_BIT(KC_LSFT)) // select to next word
                 else {
                     unregister_code(keycode);
                     unregister_mods(MOD_MASK_CSAG);

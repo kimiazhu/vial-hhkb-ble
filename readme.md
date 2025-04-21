@@ -101,3 +101,8 @@ PS:  20250420 增加一条判断，如果当前键盘处于layer 0，则 lctrl �
 |Windows     | LWIN-C      | LCTL-C        |复制       |
 |Windows     | LWIN-V      | LCTL-V        |粘贴       |
 |Windows     | LWIN-X      | LCTL-X        |剪切       |
+|Windows     | LWIN-F      | LCTL-F        |查找       |
+|Windows     | LWIN-S      | LCTL-S        |保存       |
+|Windows     | LWIN-W      | LCTL-W        |关闭tab    |
+|Windows     | LWIN-Y      | LCTL-Y        |Redo       |
+|Windows     | LWIN-Z      | LCTL-Z        |Undo       |
