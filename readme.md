@@ -106,3 +106,9 @@ PS:  20250420 增加一条判断，如果当前键盘处于layer 0，则 lctrl �
 |Windows     | LWIN-W      | LCTL-W        |关闭tab    |
 |Windows     | LWIN-Y      | LCTL-Y        |Redo       |
 |Windows     | LWIN-Z      | LCTL-Z        |Undo       |
+|Windows     | LCTL-LSFT-L | LSFT-END      |全选到文末       |
+|Windows     | LCTL-LSFT-H | LSFT-HOME     |全选到起始       |
+|Windows     | LCTL-LSFT-J | LSFT-DOWN     |选择到下一行       |
+|Windows     | LCTL-LSFT-K | LSFT-UP       |选择到上一行       |
+|Windows     | LCTL-LSFT-B | LSFT-LEFT     |往左多选择一个字符       |
+|Windows     | LCTL-LSFT-F | LSFT-RIGHT    |往右多选择一个字符       |
