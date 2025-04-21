@@ -88,8 +88,8 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
                     HANDLE_DOWN_WIN(KC_H, MOD_MASK_CS, KC_HOME, MOD_BIT(KC_LSFT)) // select to home
                     HANDLE_DOWN_WIN(KC_J, MOD_MASK_CS, KC_DOWN, MOD_BIT(KC_LSFT)) // select to next line
                     HANDLE_DOWN_WIN(KC_K, MOD_MASK_CS, KC_UP, MOD_BIT(KC_LSFT)) // select to before line
-                    HANDLE_DOWN_WIN(KC_B, MOD_MASK_CS, KC_LEFT, MOD_BIT(KC_LSFT)) // select to before word
-                    HANDLE_DOWN_WIN(KC_F, MOD_MASK_CS, KC_RIGHT, MOD_BIT(KC_LSFT)) // select to next word
+                    HANDLE_DOWN_WIN(KC_B, MOD_BIT(KC_LCTL)|MOD_BIT(KC_LSFT), KC_LEFT, MOD_BIT(KC_LSFT)) // select to before word
+                    HANDLE_DOWN_WIN(KC_F, MOD_BIT(KC_LCTL)|MOD_BIT(KC_LSFT), KC_RIGHT, MOD_BIT(KC_LSFT)) // select to next word
                     else {
                         register_mods(held_mods);
                         register_code(keycode);
@@ -164,8 +164,8 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
                 HANDLE_UP_WIN(KC_H, MOD_MASK_CS, KC_HOME, MOD_BIT(KC_LSFT)) // select to home
                 HANDLE_UP_WIN(KC_J, MOD_MASK_CS, KC_DOWN, MOD_BIT(KC_LSFT)) // select to next line
                 HANDLE_UP_WIN(KC_K, MOD_MASK_CS, KC_UP, MOD_BIT(KC_LSFT)) // select to before line
-                HANDLE_UP_WIN(KC_B, MOD_MASK_CS, KC_LEFT, MOD_BIT(KC_LSFT)) // select to before word
-                HANDLE_UP_WIN(KC_F, MOD_MASK_CS, KC_RIGHT, MOD_BIT(KC_LSFT)) // select to next word
+                HANDLE_UP_WIN(KC_B, MOD_BIT(KC_LCTL)|MOD_BIT(KC_LSFT), KC_LEFT, MOD_BIT(KC_LSFT)) // select to before word
+                HANDLE_UP_WIN(KC_F, MOD_BIT(KC_LCTL)|MOD_BIT(KC_LSFT), KC_RIGHT, MOD_BIT(KC_LSFT)) // select to next word
                 else {
                     unregister_code(keycode);
                     unregister_mods(MOD_MASK_CSAG);
