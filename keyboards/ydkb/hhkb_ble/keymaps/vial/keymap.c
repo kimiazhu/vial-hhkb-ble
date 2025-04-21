@@ -72,8 +72,8 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
                     HANDLE_DOWN_BTH(KC_K, MOD_BIT(KC_LALT), KC_PGDN, MODS_NULL)
                     HANDLE_DOWN_BTH(KC_D, MOD_BIT(KC_LCTL), KC_DEL, MODS_NULL)
                     HANDLE_DOWN_MAC(KC_R, MOD_BIT(KC_LCTL), KC_R, MOD_BIT(KC_LGUI)) // reload browser
-                    HANDLE_DOWN_WIN(KC_A, MOD_BIT(KC_LCTL), KC_HOME, MODS_NULL)
                     HANDLE_DOWN_WIN(KC_A, MOD_BIT(KC_LGUI), KC_A, MOD_BIT(KC_LCTL)) // win+A -> 全选
+                    HANDLE_DOWN_WIN(KC_A, MOD_BIT(KC_LCTL), KC_HOME, MODS_NULL)
                     HANDLE_DOWN_WIN(KC_Q, MOD_BIT(KC_LGUI), KC_F4, MOD_BIT(KC_LALT)) // win+Q -> 关闭窗口
                     HANDLE_DOWN_WIN(KC_N, MOD_BIT(KC_LCTL), KC_F2, MODS_NULL) // ctrl+n -> rename
                     HANDLE_DOWN_WIN(KC_C, MOD_BIT(KC_LGUI), KC_C, MOD_BIT(KC_LCTL)) // win+c -> 复制
@@ -86,8 +86,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
                     return false;
                 }
             }
-        } else {
-            // layer 0 and layer 1
+        } else { // layer 0 and layer 1, currently we only have 4 layers
             if (keycode == KC_RALT) { // 单独按下RALT，也只记录，不发送给系统，用于组合键切换层
                 held_mods |= MOD_BIT(KC_RALT);
                 return false;
@@ -107,16 +106,11 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             if (keycode >= KC_LCTL && keycode <= KC_RGUI) {
                 held_mods &= ~MOD_BIT(keycode);
                 if (!is_combination_active) {
-                    if (keycode == KC_RALT) {
-                        // RALT 作为一个特殊键，长按加数字用于激活指定层，短按时用于清除所有修饰键和层信息
+                    if (keycode == KC_RALT) { // RALT用作一个层切换键，加数组激活指定层，短按时用于清除修饰键并返回0层
                         RALT_RELEASED_TO_CLEAR_MOD_AND_LAYER
-                    } else {
-                        tap_code(keycode);
-                    }
+                    } else { tap_code(keycode); }
                 }
-
-                if (!held_mods) {
-                    // 所有的 mods 组合键都释放了
+                if (!held_mods) { // 所有的 mods 组合键都释放了
                     is_combination_active = false;
                 }
                 return false;
@@ -143,8 +137,8 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
                 HANDLE_UP_BTH(KC_K, MOD_BIT(KC_LALT), KC_PGDN, MODS_NULL)
                 HANDLE_UP_BTH(KC_D, MOD_BIT(KC_LCTL), KC_DEL, MODS_NULL)
                 HANDLE_UP_MAC(KC_R, MOD_BIT(KC_LCTL), KC_R, MOD_BIT(KC_LGUI))
-                HANDLE_UP_WIN(KC_A, MOD_BIT(KC_LCTL), KC_HOME, MODS_NULL)
                 HANDLE_UP_WIN(KC_A, MOD_BIT(KC_LGUI), KC_A, MOD_BIT(KC_LCTL)) // win+A -> 全选
+                HANDLE_UP_WIN(KC_A, MOD_BIT(KC_LCTL), KC_HOME, MODS_NULL)
                 HANDLE_UP_WIN(KC_Q, MOD_BIT(KC_LGUI), KC_F4, MOD_BIT(KC_LALT)) // win+Q -> 关闭窗口
                 HANDLE_UP_WIN(KC_N, MOD_BIT(KC_LCTL), KC_F2, MODS_NULL) // ctrl+n -> rename
                 HANDLE_UP_WIN(KC_C, MOD_BIT(KC_LGUI), KC_C, MOD_BIT(KC_LCTL)) // win+c -> 复制
@@ -152,26 +146,19 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
                 HANDLE_UP_WIN(KC_X, MOD_BIT(KC_LGUI), KC_X, MOD_BIT(KC_LCTL)) // win+x -> 剪切
                 else {
                     unregister_code(keycode);
-                    // 这里之所以清除所有，是为了确保不会因为按键释放顺序导致错误，如果是用比如:
-                    // 如果只是 unregister_mods(held_mods) 的话，假设用户按下 CTRL+C，
-                    // 用户释放比较快，导致 CTRL 先释放了，再释放 C，这时候会导致 CTRL 无法正常释放，因为先释放的
-                    // CTRL 会改变 held_mods 的值。所以这里干脆直接把所有 mods 都 unregister。
                     unregister_mods(MOD_MASK_CSAG);
-                    clear_mods();
                     // unregister_mods(held_mods);
+                    clear_mods();
                 }
                 return false;
             }
-        } else {
-            // layer 0 and layer 1
+        } else { // layer 0 and layer 1
             if (keycode == KC_RALT) {
                 held_mods &= ~MOD_BIT(KC_RALT);
                 if (!is_combination_active) {
                     RALT_RELEASED_TO_CLEAR_MOD_AND_LAYER
                 }
-
-                if (!held_mods) {
-                    // 所有的 mods 组合键都释放了
+                if (!held_mods) { // 所有的 mods 组合键都释放了
                     is_combination_active = false;
                 }
                 return false;
