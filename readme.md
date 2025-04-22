@@ -71,44 +71,44 @@ PS:  20250420 增加一条判断，如果当前键盘处于layer 0，则 lctrl �
 ## 快捷键列表
 键盘设置了四层，层号0~3，0 层为默认层，一层为多功能层，通过 FN 按下时激活，内容根 HHKB 默认一样没有变。2 层为 Windows 层，3 层为 Mac 层。其中 1-2-3 层也可以通过 `右Alt`+1/2/3 数字键长期激活，短按 `右Alt` 也会回到 0 层。
 
-|平台        | 按键        | 映射按键      | 含义        |
-|:-----------|:------------|:--------------|:------------|
-|BOTH        | LCTRL-H     | LEFT          |方向左      | 
-|BOTH        | LCTRL-J     | DOWN          |方向下      | 
-|BOTH        | LCTRL-K     | UP            |方向上      | 
-|BOTH        | LCTRL-L     | RIGHT         |方向右      | 
-|BOTH        | LALT-H      | LCTL-LEFT     |向左一个单词  | 
-|BOTH        | LALTL-L     | LCTL-RIGHT    |向右一个单词      | 
-|BOTH        | LSHIFT-ESC  | ~             |波浪号     | 
-|BOTH        | LCTL-ESC    | \`            |反引号         | 
-|BOTH        | LSHIFT-Back | \|            |中竖线     | 
-|BOTH        | LCTL-Back   | \\            |反斜杠     | 
-|BOTH        | LCTRL-E     | END           |END     | 
-|BOTH        | LCTRL-"     | Backspace     |退格删除 |
-|BOTH        | LCTRL-;     | Return         |回车      | 
-|BOTH        | LCTRL-B     | Backspace     |退格删除      | 
+|平台        | 按键        | 映射按键      | 含义                    |
+|:-----------|:------------|:--------------|:----------------------|
+|BOTH        | LCTRL-H     | LEFT          |方向左                  | 
+|BOTH        | LCTRL-J     | DOWN          |方向下                  | 
+|BOTH        | LCTRL-K     | UP            |方向上                  | 
+|BOTH        | LCTRL-L     | RIGHT         |方向右                  | 
+|BOTH        | LALT-H      | LCTL-LEFT     |向左一个单词             | 
+|BOTH        | LALTL-L     | LCTL-RIGHT    |向右一个单词             | 
+|BOTH        | LSHIFT-ESC  | ~             |波浪号                  | 
+|BOTH        | LCTL-ESC    | \`            |反引号                  | 
+|BOTH        | LSHIFT-Back | \|            |中竖线                  | 
+|BOTH        | LCTL-Back   | \\            |反斜杠                  | 
+|BOTH        | LCTRL-E     | END           |END                    | 
+|BOTH        | LCTRL-"     | Backspace     |退格删除                |
+|BOTH        | LCTRL-;     | Return        |回车                    | 
+|BOTH        | LCTRL-B     | Backspace     |退格删除                | 
 |BOTH        | LALT-ESC    | LALT-\`       |ALT-反引号，我主要用来激活 mac 下的 iterm      | 
-|BOTH        | LALT-U      | Page UP       |上翻页    |
-|BOTH        | LALT-D      | Page DOWN     |下翻页    |
-|BOTH        | LALT-J      | Page UP       |上翻页    |
-|BOTH        | LALT-K      | Page DOWN     |下翻页    |
-|BOTH        | LCTL-D      | Delece        |删除当前字符    |
-|macOS       | LCTL-R      | CMD-R         |浏览器刷新      | 
+|BOTH        | LALT-U      | Page UP       |上翻页                  |
+|BOTH        | LALT-D      | Page DOWN     |下翻页                  |
+|BOTH        | LALT-J      | Page UP       |上翻页                  |
+|BOTH        | LALT-K      | Page DOWN     |下翻页                  |
+|BOTH        | LCTL-D      | Delece        |删除当前字符            |
+|macOS       | LCTL-R      | CMD-R         |浏览器刷新              | 
 |Windows     | LWIN-A      | LCTL-A        |全选,保持跟 mac 相同     |
 |Windows     | LCTRL-A     | HOME          |行首，mac下本来就是这个  | 
-|Windows     | LCTRL-Q     | LALT-F4       |关闭当前应用程序   |
-|Windows     | LCTRL-N     | F2            |重命名当前文件 |
-|Windows     | LWIN-C      | LCTL-C        |复制       |
-|Windows     | LWIN-V      | LCTL-V        |粘贴       |
-|Windows     | LWIN-X      | LCTL-X        |剪切       |
-|Windows     | LWIN-F      | LCTL-F        |查找       |
-|Windows     | LWIN-S      | LCTL-S        |保存       |
-|Windows     | LWIN-W      | LCTL-W        |关闭tab    |
-|Windows     | LWIN-Y      | LCTL-Y        |Redo       |
-|Windows     | LWIN-Z      | LCTL-Z        |Undo       |
-|Windows     | LCTL-LSFT-L | LSFT-END      |全选到文末       |
-|Windows     | LCTL-LSFT-H | LSFT-HOME     |全选到起始       |
-|Windows     | LCTL-LSFT-J | LSFT-DOWN     |选择到下一行       |
-|Windows     | LCTL-LSFT-K | LSFT-UP       |选择到上一行       |
+|Windows     | LCTRL-Q     | LALT-F4       |关闭当前应用程序         |
+|Windows     | LCTRL-N     | F2            |重命名当前文件           |
+|Windows     | LWIN-C      | LCTL-C        |复制                    |
+|Windows     | LWIN-V      | LCTL-V        |粘贴                    |
+|Windows     | LWIN-X      | LCTL-X        |剪切                    |
+|Windows     | LWIN-F      | LCTL-F        |查找                    |
+|Windows     | LWIN-S      | LCTL-S        |保存                    |
+|Windows     | LWIN-W      | LCTL-W        |关闭tab                 |
+|Windows     | LWIN-Y      | LCTL-Y        |Redo                    |
+|Windows     | LWIN-Z      | LCTL-Z        |Undo                    |
+|Windows     | LCTL-LSFT-L | LSFT-END      |全选到文末/行末          |
+|Windows     | LCTL-LSFT-H | LSFT-HOME     |全选到起始/行首          |
+|Windows     | LCTL-LSFT-J | LSFT-DOWN     |选择到下一行             |
+|Windows     | LCTL-LSFT-K | LSFT-UP       |选择到上一行             |
 |Windows     | LCTL-LSFT-B | LSFT-LEFT     |往左多选择一个字符       |
 |Windows     | LCTL-LSFT-F | LSFT-RIGHT    |往右多选择一个字符       |
