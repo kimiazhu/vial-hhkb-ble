@@ -114,3 +114,4 @@ PS:  20250420 增加一条判断，如果当前键盘处于layer 0，则 lctrl �
 |Windows     | LCTL-LSFT-F | LSFT-RIGHT    |往右多选择一个字符        |
 |Windows     | LWIN-L      | LCTL-L        |跳转到地址栏             |
 |Windows     | LWIN-U      | LCTL-Z        |Undo                    |
+|Windows     | LWIN-/      | LCTL-/        |注释代码                 |
