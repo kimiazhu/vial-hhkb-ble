@@ -92,6 +92,8 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
                     HANDLE_DOWN_WIN(37, KC_K, (MOD_BIT(KC_LCTL)|MOD_BIT(KC_LSFT)), KC_UP, (MOD_BIT(KC_LSFT))) // select to before line
                     HANDLE_DOWN_WIN(38, KC_B, (MOD_BIT(KC_LCTL)|MOD_BIT(KC_LSFT)), KC_LEFT, (MOD_BIT(KC_LSFT))) // select to before word
                     HANDLE_DOWN_WIN(39, KC_F, (MOD_BIT(KC_LCTL)|MOD_BIT(KC_LSFT)), KC_RIGHT, (MOD_BIT(KC_LSFT))) // select to next word
+                    HANDLE_DOWN_WIN(40, KC_L, (MOD_BIT(KC_LGUI)), KC_L, (MOD_BIT(KC_LCTL))) // Win: LWin+L -> browser address bar
+                    HANDLE_DOWN_WIN(41, KC_U, (MOD_BIT(KC_LGUI)), KC_Z, (MOD_BIT(KC_LCTL))) // Win: LWin+u -> undo
                     else {
                         register_mods(held_mods);
                         register_code(keycode);
@@ -168,6 +170,8 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
                 HANDLE_UP(37, KC_K, (MOD_BIT(KC_LCTL)|MOD_BIT(KC_LSFT)), KC_UP, (MOD_BIT(KC_LSFT))) // select to before line
                 HANDLE_UP(38, KC_B, (MOD_BIT(KC_LCTL)|MOD_BIT(KC_LSFT)), KC_LEFT, (MOD_BIT(KC_LSFT))) // select to before word
                 HANDLE_UP(39, KC_F, (MOD_BIT(KC_LCTL)|MOD_BIT(KC_LSFT)), KC_RIGHT, (MOD_BIT(KC_LSFT))) // select to next word
+                HANDLE_UP(40, KC_L, (MOD_BIT(KC_LGUI)), KC_L, (MOD_BIT(KC_LCTL))) // Win: LWin+L -> browser address bar
+                HANDLE_UP(41, KC_U, (MOD_BIT(KC_LGUI)), KC_Z, (MOD_BIT(KC_LCTL))) // Win: LWin+u -> undo
                 else {
                     unregister_code(keycode);
                     // unregister_mods(MOD_MASK_CSAG);
