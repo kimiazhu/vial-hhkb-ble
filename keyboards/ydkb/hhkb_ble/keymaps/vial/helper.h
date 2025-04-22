@@ -9,6 +9,7 @@
 #define MAC_LAYER 3
 
 // 调用这个方法之前，先用 IS_LAYER_ON(3) 判断一下当前是否在 macOS 层
+/*
 bool handle_mac(uint16_t keycode, keyrecord_t *record, uint16_t curr_key, uint8_t curr_mods, uint16_t to, uint8_t to_mods) {
     if (record->event.pressed) {
         if (keycode == curr_key && (curr_mods == MOD_BIT(KC_LSFT))) {
@@ -29,7 +30,7 @@ bool handle_mac(uint16_t keycode, keyrecord_t *record, uint16_t curr_key, uint8_
     }
     return true;
 }
-
+*/
 #define RALT_RELEASED_TO_CLEAR_MOD_AND_LAYER \
     unregister_mods(MOD_MASK_CSAG); \
     custom_mapping_flag = 0; \
