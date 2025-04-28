@@ -115,3 +115,7 @@ PS:  20250420 增加一条判断，如果当前键盘处于layer 0，则 lctrl �
 |Windows     | LWIN-L      | LCTL-L        |跳转到地址栏             |
 |Windows     | LWIN-U      | LCTL-Z        |Undo                    |
 |Windows     | LWIN-/      | LCTL-/        |注释代码                 |
+|Windows     | LALT-LSFT-H | CTRL-LSFT-LEFT     |往左多选择多一个单词       |
+|Windows     | LALT-LSFT-L | CTRL-LSFT-RIGHT    |往右多选择多一个单词       |
+|macOS       | LALT-LSFT-H | CALT-LSFT-LEFT     |往左多选择多一个单词       |
+|macOS       | LALT-LSFT-L | CALT-LSFT-RIGHT    |往右多选择多一个单词       |
