@@ -90,8 +90,8 @@ PS:  20250420 增加一条判断，如果当前键盘处于layer 0，则 lctrl �
 |BOTH        | LALT-ESC    | LALT-\`       |ALT-反引号，我主要用来激活 mac 下的 iterm      | 
 |BOTH        | LALT-U      | Page UP       |上翻页                  |
 |BOTH        | LALT-D      | Page DOWN     |下翻页                  |
-|BOTH        | LALT-J      | Page DOWN     |上翻页                  |
-|BOTH        | LALT-K      | Page UP       |下翻页                  |
+|BOTH        | LALT-J      | Page DOWN     |下翻页                  |
+|BOTH        | LALT-K      | Page UP       |上翻页                  |
 |BOTH        | LCTL-D      | Delece        |删除当前字符            |
 |macOS       | LCTL-R      | CMD-R         |浏览器刷新              | 
 |Windows     | LWIN-A      | LCTL-A        |全选,保持跟 mac 相同     |
