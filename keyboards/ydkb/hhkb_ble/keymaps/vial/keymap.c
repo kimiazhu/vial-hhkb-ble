@@ -70,8 +70,8 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
                     HANDLE_DOWN_BTH(15, KC_ESC, (MOD_BIT(KC_LALT)), KC_GRV, (MOD_BIT(KC_LALT)))
                     HANDLE_DOWN_BTH(16, KC_U, (MOD_BIT(KC_LALT)), KC_PGUP, MODS_NULL)
                     HANDLE_DOWN_BTH(17, KC_D, (MOD_BIT(KC_LALT)), KC_PGDN, MODS_NULL)
-                    HANDLE_DOWN_BTH(18, KC_J, (MOD_BIT(KC_LALT)), KC_PGUP, MODS_NULL)
-                    HANDLE_DOWN_BTH(19, KC_K, (MOD_BIT(KC_LALT)), KC_PGDN, MODS_NULL)
+                    HANDLE_DOWN_BTH(18, KC_J, (MOD_BIT(KC_LALT)), KC_PGDN, MODS_NULL)
+                    HANDLE_DOWN_BTH(19, KC_K, (MOD_BIT(KC_LALT)), KC_PGUP, MODS_NULL)
                     HANDLE_DOWN_BTH(20, KC_D, (MOD_BIT(KC_LCTL)), KC_DEL, MODS_NULL)
                     HANDLE_DOWN_MAC(21, KC_R, (MOD_BIT(KC_LCTL)), KC_R, (MOD_BIT(KC_LGUI)))
                     HANDLE_DOWN_WIN(22, KC_A, (MOD_BIT(KC_LGUI)), KC_A, (MOD_BIT(KC_LCTL))) // win+A -> 全选
@@ -153,8 +153,8 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
                 HANDLE_UP(15, KC_ESC, (MOD_BIT(KC_LALT)), KC_GRV, (MOD_BIT(KC_LALT)))
                 HANDLE_UP(16, KC_U, (MOD_BIT(KC_LALT)), KC_PGUP, MODS_NULL)
                 HANDLE_UP(17, KC_D, (MOD_BIT(KC_LALT)), KC_PGDN, MODS_NULL)
-                HANDLE_UP(18, KC_J, (MOD_BIT(KC_LALT)), KC_PGUP, MODS_NULL)
-                HANDLE_UP(19, KC_K, (MOD_BIT(KC_LALT)), KC_PGDN, MODS_NULL)
+                HANDLE_UP(18, KC_J, (MOD_BIT(KC_LALT)), KC_PGDN, MODS_NULL)
+                HANDLE_UP(19, KC_K, (MOD_BIT(KC_LALT)), KC_PGUP, MODS_NULL)
                 HANDLE_UP(20, KC_D, (MOD_BIT(KC_LCTL)), KC_DEL, MODS_NULL)
                 HANDLE_UP(21, KC_R, (MOD_BIT(KC_LCTL)), KC_R, (MOD_BIT(KC_LGUI)))
                 HANDLE_UP(22, KC_A, (MOD_BIT(KC_LGUI)), KC_A, (MOD_BIT(KC_LCTL))) // win+A -> 全选
