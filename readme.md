@@ -93,8 +93,8 @@ PS:  20250420 增加一条判断，如果当前键盘处于layer 0，则 lctrl �
 |BOTH        | LALT-ESC    | LALT-\`       |ALT-反引号，我主要用来激活 mac 下的 iterm      | 
 |BOTH        | LALT-U      | Page UP       |上翻页                  |
 |BOTH        | LALT-D      | Page DOWN     |下翻页                  |
-|BOTH        | LALT-J      | Page UP       |上翻页                  |
-|BOTH        | LALT-K      | Page DOWN     |下翻页                  |
+|BOTH        | LALT-J      | Page DOWN     |下翻页                  |
+|BOTH        | LALT-K      | Page UP       |上翻页                  |
 |BOTH        | LCTL-D      | Delece        |删除当前字符            |
 |macOS       | LCTL-R      | CMD-R         |浏览器刷新              | 
 |Windows     | LWIN-A      | LCTL-A        |全选,保持跟 mac 相同     |
@@ -118,4 +118,8 @@ PS:  20250420 增加一条判断，如果当前键盘处于layer 0，则 lctrl �
 |Windows     | LWIN-L      | LCTL-L        |跳转到地址栏             |
 |Windows     | LWIN-U      | LCTL-Z        |Undo                    |
 |Windows     | LWIN-/      | LCTL-/        |注释代码                 |
+|Windows     | LALT-LSFT-H | CTRL-LSFT-LEFT     |往左多选择多一个单词       |
+|Windows     | LALT-LSFT-L | CTRL-LSFT-RIGHT    |往右多选择多一个单词       |
+|macOS       | LALT-LSFT-H | CALT-LSFT-LEFT     |往左多选择多一个单词       |
+|macOS       | LALT-LSFT-L | CALT-LSFT-RIGHT    |往右多选择多一个单词       |
 |BOTH        | LGUI-'      | LSFT-Enter    |用于微信和企业微信换行，这个主要是保持和我的vortex 40%键盘一致  |

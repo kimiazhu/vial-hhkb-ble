@@ -70,8 +70,8 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
                     HANDLE_DOWN_BTH(15, KC_ESC, (MOD_BIT(KC_LALT)), KC_GRV, (MOD_BIT(KC_LALT)))
                     HANDLE_DOWN_BTH(16, KC_U, (MOD_BIT(KC_LALT)), KC_PGUP, MODS_NULL)
                     HANDLE_DOWN_BTH(17, KC_D, (MOD_BIT(KC_LALT)), KC_PGDN, MODS_NULL)
-                    HANDLE_DOWN_BTH(18, KC_J, (MOD_BIT(KC_LALT)), KC_PGUP, MODS_NULL)
-                    HANDLE_DOWN_BTH(19, KC_K, (MOD_BIT(KC_LALT)), KC_PGDN, MODS_NULL)
+                    HANDLE_DOWN_BTH(18, KC_J, (MOD_BIT(KC_LALT)), KC_PGDN, MODS_NULL)
+                    HANDLE_DOWN_BTH(19, KC_K, (MOD_BIT(KC_LALT)), KC_PGUP, MODS_NULL)
                     HANDLE_DOWN_BTH(20, KC_D, (MOD_BIT(KC_LCTL)), KC_DEL, MODS_NULL)
                     HANDLE_DOWN_MAC(21, KC_R, (MOD_BIT(KC_LCTL)), KC_R, (MOD_BIT(KC_LGUI)))
                     HANDLE_DOWN_WIN(22, KC_A, (MOD_BIT(KC_LGUI)), KC_A, (MOD_BIT(KC_LCTL))) // win+A -> 全选
@@ -86,16 +86,19 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
                     HANDLE_DOWN_WIN(31, KC_W, (MOD_BIT(KC_LGUI)), KC_W, (MOD_BIT(KC_LCTL))) // win+w -> close tab
                     HANDLE_DOWN_WIN(32, KC_Z, (MOD_BIT(KC_LGUI)), KC_Z, (MOD_BIT(KC_LCTL))) // win+z -> undo
                     HANDLE_DOWN_WIN(33, KC_Y, (MOD_BIT(KC_LGUI)), KC_Y, (MOD_BIT(KC_LCTL))) // win+y -> redo
-                    HANDLE_DOWN_WIN(34, KC_L, (MOD_BIT(KC_LCTL)|MOD_BIT(KC_LSFT)), KC_END, (MOD_BIT(KC_LSFT))) // select to end
-                    HANDLE_DOWN_WIN(35, KC_H, (MOD_BIT(KC_LCTL)|MOD_BIT(KC_LSFT)), KC_HOME, (MOD_BIT(KC_LSFT))) // select to home
-                    HANDLE_DOWN_WIN(36, KC_J, (MOD_BIT(KC_LCTL)|MOD_BIT(KC_LSFT)), KC_DOWN, (MOD_BIT(KC_LSFT))) // select to next line
-                    HANDLE_DOWN_WIN(37, KC_K, (MOD_BIT(KC_LCTL)|MOD_BIT(KC_LSFT)), KC_UP, (MOD_BIT(KC_LSFT))) // select to before line
-                    HANDLE_DOWN_WIN(38, KC_B, (MOD_BIT(KC_LCTL)|MOD_BIT(KC_LSFT)), KC_LEFT, (MOD_BIT(KC_LSFT))) // select to before word
-                    HANDLE_DOWN_WIN(39, KC_F, (MOD_BIT(KC_LCTL)|MOD_BIT(KC_LSFT)), KC_RIGHT, (MOD_BIT(KC_LSFT))) // select to next word
+                    HANDLE_DOWN_BTH(34, KC_L, (MOD_BIT(KC_LCTL)|MOD_BIT(KC_LSFT)), KC_END, (MOD_BIT(KC_LSFT))) // select to end
+                    HANDLE_DOWN_BTH(35, KC_H, (MOD_BIT(KC_LCTL)|MOD_BIT(KC_LSFT)), KC_HOME, (MOD_BIT(KC_LSFT))) // select to home
+                    HANDLE_DOWN_BTH(36, KC_J, (MOD_BIT(KC_LCTL)|MOD_BIT(KC_LSFT)), KC_DOWN, (MOD_BIT(KC_LSFT))) // select to next line
+                    HANDLE_DOWN_BTH(37, KC_K, (MOD_BIT(KC_LCTL)|MOD_BIT(KC_LSFT)), KC_UP, (MOD_BIT(KC_LSFT))) // select to before line
+                    HANDLE_DOWN_BTH(38, KC_B, (MOD_BIT(KC_LCTL)|MOD_BIT(KC_LSFT)), KC_LEFT, (MOD_BIT(KC_LSFT))) // select to previous character
+                    HANDLE_DOWN_BTH(39, KC_F, (MOD_BIT(KC_LCTL)|MOD_BIT(KC_LSFT)), KC_RIGHT, (MOD_BIT(KC_LSFT))) // select to next character
                     HANDLE_DOWN_WIN(40, KC_L, (MOD_BIT(KC_LGUI)), KC_L, (MOD_BIT(KC_LCTL))) // Win: LWin+L -> browser address bar
                     HANDLE_DOWN_WIN(41, KC_U, (MOD_BIT(KC_LGUI)), KC_Z, (MOD_BIT(KC_LCTL))) // Win: LWin+u -> undo
                     HANDLE_DOWN_WIN(42, KC_SLSH, (MOD_BIT(KC_LGUI)), KC_SLSH, (MOD_BIT(KC_LCTL))) // Win: LWin+/ -> comment code
-                    HANDLE_DOWN_BTH(43, KC_QUOT, (MOD_BIT(KC_LGUI)), KC_ENT, (MOD_BIT(KC_LSFT))) // BOTH: LGUI+' -> LShift+Enter, used to break line in wechat
+                    HANDLE_DOWN_WIN(43, KC_H, (MOD_BIT(KC_LALT)|MOD_BIT(KC_LSFT)), KC_LEFT, (MOD_BIT(KC_LCTL)|MOD_BIT(KC_LSFT))) // Win: select to previous word
+                    HANDLE_DOWN_WIN(44, KC_L, (MOD_BIT(KC_LALT)|MOD_BIT(KC_LSFT)), KC_RIGHT, (MOD_BIT(KC_LCTL)|MOD_BIT(KC_LSFT))) // Win: select to next word
+                    HANDLE_DOWN_MAC(45, KC_H, (MOD_BIT(KC_LALT)|MOD_BIT(KC_LSFT)), KC_LEFT, (MOD_BIT(KC_LALT)|MOD_BIT(KC_LSFT))) // mac: select to previous word
+                    HANDLE_DOWN_MAC(46, KC_L, (MOD_BIT(KC_LALT)|MOD_BIT(KC_LSFT)), KC_RIGHT, (MOD_BIT(KC_LALT)|MOD_BIT(KC_LSFT))) // mac: select to next word
                     else {
                         register_mods(held_mods);
                         register_code(keycode);
@@ -150,8 +153,8 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
                 HANDLE_UP(15, KC_ESC, (MOD_BIT(KC_LALT)), KC_GRV, (MOD_BIT(KC_LALT)))
                 HANDLE_UP(16, KC_U, (MOD_BIT(KC_LALT)), KC_PGUP, MODS_NULL)
                 HANDLE_UP(17, KC_D, (MOD_BIT(KC_LALT)), KC_PGDN, MODS_NULL)
-                HANDLE_UP(18, KC_J, (MOD_BIT(KC_LALT)), KC_PGUP, MODS_NULL)
-                HANDLE_UP(19, KC_K, (MOD_BIT(KC_LALT)), KC_PGDN, MODS_NULL)
+                HANDLE_UP(18, KC_J, (MOD_BIT(KC_LALT)), KC_PGDN, MODS_NULL)
+                HANDLE_UP(19, KC_K, (MOD_BIT(KC_LALT)), KC_PGUP, MODS_NULL)
                 HANDLE_UP(20, KC_D, (MOD_BIT(KC_LCTL)), KC_DEL, MODS_NULL)
                 HANDLE_UP(21, KC_R, (MOD_BIT(KC_LCTL)), KC_R, (MOD_BIT(KC_LGUI)))
                 HANDLE_UP(22, KC_A, (MOD_BIT(KC_LGUI)), KC_A, (MOD_BIT(KC_LCTL))) // win+A -> 全选
@@ -170,12 +173,15 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
                 HANDLE_UP(35, KC_H, (MOD_BIT(KC_LCTL)|MOD_BIT(KC_LSFT)), KC_HOME, (MOD_BIT(KC_LSFT))) // select to home
                 HANDLE_UP(36, KC_J, (MOD_BIT(KC_LCTL)|MOD_BIT(KC_LSFT)), KC_DOWN, (MOD_BIT(KC_LSFT))) // select to next line
                 HANDLE_UP(37, KC_K, (MOD_BIT(KC_LCTL)|MOD_BIT(KC_LSFT)), KC_UP, (MOD_BIT(KC_LSFT))) // select to before line
-                HANDLE_UP(38, KC_B, (MOD_BIT(KC_LCTL)|MOD_BIT(KC_LSFT)), KC_LEFT, (MOD_BIT(KC_LSFT))) // select to before word
-                HANDLE_UP(39, KC_F, (MOD_BIT(KC_LCTL)|MOD_BIT(KC_LSFT)), KC_RIGHT, (MOD_BIT(KC_LSFT))) // select to next word
+                HANDLE_UP(38, KC_B, (MOD_BIT(KC_LCTL)|MOD_BIT(KC_LSFT)), KC_LEFT, (MOD_BIT(KC_LSFT))) // select to previous character
+                HANDLE_UP(39, KC_F, (MOD_BIT(KC_LCTL)|MOD_BIT(KC_LSFT)), KC_RIGHT, (MOD_BIT(KC_LSFT))) // select to next character
                 HANDLE_UP(40, KC_L, (MOD_BIT(KC_LGUI)), KC_L, (MOD_BIT(KC_LCTL))) // Win: LWin+L -> browser address bar
                 HANDLE_UP(41, KC_U, (MOD_BIT(KC_LGUI)), KC_Z, (MOD_BIT(KC_LCTL))) // Win: LWin+u -> undo
                 HANDLE_UP(42, KC_SLSH, (MOD_BIT(KC_LGUI)), KC_SLSH, (MOD_BIT(KC_LCTL))) // Win: LWin+/ -> comment code
-                HANDLE_UP(43, KC_QUOT, (MOD_BIT(KC_LGUI)), KC_ENT, (MOD_BIT(KC_LSFT))) // BOTH: LGUI+' -> LShift+Enter, used to break line in wechat
+                HANDLE_UP(43, KC_H, (MOD_BIT(KC_LALT)|MOD_BIT(KC_LSFT)), KC_LEFT, (MOD_BIT(KC_LCTL)|MOD_BIT(KC_LSFT))) // Win: select to next word
+                HANDLE_UP(44, KC_L, (MOD_BIT(KC_LALT)|MOD_BIT(KC_LSFT)), KC_RIGHT, (MOD_BIT(KC_LCTL)|MOD_BIT(KC_LSFT))) // Win: select to next word
+                HANDLE_UP(45, KC_H, (MOD_BIT(KC_LALT)|MOD_BIT(KC_LSFT)), KC_LEFT, (MOD_BIT(KC_LALT)|MOD_BIT(KC_LSFT))) // mac: select to previous word
+                HANDLE_UP(46, KC_L, (MOD_BIT(KC_LALT)|MOD_BIT(KC_LSFT)), KC_RIGHT, (MOD_BIT(KC_LALT)|MOD_BIT(KC_LSFT))) // mac: select to next word
                 else {
                     unregister_code(keycode);
                     // unregister_mods(MOD_MASK_CSAG);
