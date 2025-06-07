@@ -99,6 +99,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
                     HANDLE_DOWN_WIN(44, KC_L, (MOD_BIT(KC_LALT)|MOD_BIT(KC_LSFT)), KC_RIGHT, (MOD_BIT(KC_LCTL)|MOD_BIT(KC_LSFT))) // Win: select to next word
                     HANDLE_DOWN_MAC(45, KC_H, (MOD_BIT(KC_LALT)|MOD_BIT(KC_LSFT)), KC_LEFT, (MOD_BIT(KC_LALT)|MOD_BIT(KC_LSFT))) // mac: select to previous word
                     HANDLE_DOWN_MAC(46, KC_L, (MOD_BIT(KC_LALT)|MOD_BIT(KC_LSFT)), KC_RIGHT, (MOD_BIT(KC_LALT)|MOD_BIT(KC_LSFT))) // mac: select to next word
+                    HANDLE_DOWN_BTH(47, KC_QUOT, (MOD_BIT(KC_LGUI)), KC_ENT, (MOD_BIT(KC_LSFT))) // BOTH: LGUI+' -> LSFT+Enter, used to break line in wechat
                     else {
                         register_mods(held_mods);
                         register_code(keycode);
@@ -182,6 +183,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
                 HANDLE_UP(44, KC_L, (MOD_BIT(KC_LALT)|MOD_BIT(KC_LSFT)), KC_RIGHT, (MOD_BIT(KC_LCTL)|MOD_BIT(KC_LSFT))) // Win: select to next word
                 HANDLE_UP(45, KC_H, (MOD_BIT(KC_LALT)|MOD_BIT(KC_LSFT)), KC_LEFT, (MOD_BIT(KC_LALT)|MOD_BIT(KC_LSFT))) // mac: select to previous word
                 HANDLE_UP(46, KC_L, (MOD_BIT(KC_LALT)|MOD_BIT(KC_LSFT)), KC_RIGHT, (MOD_BIT(KC_LALT)|MOD_BIT(KC_LSFT))) // mac: select to next word
+                HANDLE_UP(47, KC_QUOT, (MOD_BIT(KC_LGUI)), KC_ENT, (MOD_BIT(KC_LSFT))) // BOTH: LGUI+' -> LSFT+Enter, used to break line in wechat
                 else {
                     unregister_code(keycode);
                     // unregister_mods(MOD_MASK_CSAG);
