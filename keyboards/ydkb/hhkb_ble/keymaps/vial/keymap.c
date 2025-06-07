@@ -95,6 +95,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
                     HANDLE_DOWN_WIN(40, KC_L, (MOD_BIT(KC_LGUI)), KC_L, (MOD_BIT(KC_LCTL))) // Win: LWin+L -> browser address bar
                     HANDLE_DOWN_WIN(41, KC_U, (MOD_BIT(KC_LGUI)), KC_Z, (MOD_BIT(KC_LCTL))) // Win: LWin+u -> undo
                     HANDLE_DOWN_WIN(42, KC_SLSH, (MOD_BIT(KC_LGUI)), KC_SLSH, (MOD_BIT(KC_LCTL))) // Win: LWin+/ -> comment code
+                    HANDLE_DOWN_BTH(43, KC_QUOT, (MOD_BIT(KC_LGUI)), KC_ENT, (MOD_BIT(KC_LSFT))) // BOTH: LGUI+' -> LShift+Enter, used to break line in wechat
                     else {
                         register_mods(held_mods);
                         register_code(keycode);
@@ -174,6 +175,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
                 HANDLE_UP(40, KC_L, (MOD_BIT(KC_LGUI)), KC_L, (MOD_BIT(KC_LCTL))) // Win: LWin+L -> browser address bar
                 HANDLE_UP(41, KC_U, (MOD_BIT(KC_LGUI)), KC_Z, (MOD_BIT(KC_LCTL))) // Win: LWin+u -> undo
                 HANDLE_UP(42, KC_SLSH, (MOD_BIT(KC_LGUI)), KC_SLSH, (MOD_BIT(KC_LCTL))) // Win: LWin+/ -> comment code
+                HANDLE_UP(43, KC_QUOT, (MOD_BIT(KC_LGUI)), KC_ENT, (MOD_BIT(KC_LSFT))) // BOTH: LGUI+' -> LShift+Enter, used to break line in wechat
                 else {
                     unregister_code(keycode);
                     // unregister_mods(MOD_MASK_CSAG);

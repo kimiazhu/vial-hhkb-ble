@@ -49,16 +49,19 @@ PS:  20250420 增加一条判断，如果当前键盘处于layer 0，则 lctrl �
 
 ## 运行编译容器
 
-`pm run -d --user root --cap-add=NET_RAW -v ~/Development:/root/Development -p8890:22  ghcr.io/kimiazhu/dev-qmk:250412`
+`pm run -d --user root --cap-add=NET_RAW -v ~/Development:/root/Development -p8890:22 ghcr.io/kimiazhu/dev-qmk:250412`
 
 ## 构建固件
 
-通过 ssh 进入容器：`ssh -p 8890 root@localhost`，进入 `/root/Development` 目录，然后 `git clone --recursive git@github.com:kimiazhu/vial-hhkb-ble.git` 本工程，在工程根目录下执行：
+通过 ssh 进入容器：`ssh -p 8890 root@localhost`，进入 `/root/Development` 目录，这里假设我们把代码放在`/root/Development/keyboard`下，
+1. 克隆代码  
+`cd /root/Development/keyboard && cd /root/Development/keyboard && git clone --recursive git@github.com:kimiazhu/vial-hhkb-ble.git` 
+2. 编译，在工程根目录下执行：  
+`cd vial-hhkb-ble && make ydkb/hhkb_ble:vial`
+3. 最后会得到大概如下的输出，表示编译成功：
+![编译成功](images/build-output.jpg)  
 
-`make ydkb/hhkb_ble:vial`
-
-最后会得到大概如下的输出，表示编译成功：
-![编译成功](images/build-output.jpg)
+编译成功后，固件位于工程目录下 `/root/Development/keyboard/vial-hhkb-ble/ydkb_hhkb_ble_vial.bin`
 
 ## 刷写固件
 
@@ -115,3 +118,4 @@ PS:  20250420 增加一条判断，如果当前键盘处于layer 0，则 lctrl �
 |Windows     | LWIN-L      | LCTL-L        |跳转到地址栏             |
 |Windows     | LWIN-U      | LCTL-Z        |Undo                    |
 |Windows     | LWIN-/      | LCTL-/        |注释代码                 |
+|BOTH        | LGUI-'      | LSFT-Enter    |用于微信和企业微信换行，这个主要是保持和我的vortex 40%键盘一致  |
